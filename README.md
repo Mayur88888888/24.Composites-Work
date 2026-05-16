@@ -2,7 +2,8 @@
 <img width="1920" height="1080" alt="1" src="https://github.com/user-attachments/assets/f2852771-7445-4d5a-aa4b-461205397a22" />
 
 Over the last few weeks, I have been developing an industrial engineering software platform focused specifically on compression molding of composite materials.
-(Not yet published - keep watching on https://github.com/Mayur88888888 )
+(Not yet published - keep watching on https://github.com/Mayur88888888 ).
+
 The objective of this platform is not only to visualize a molding cycle, but to help engineers, students, researchers, and process developers understand the deep relationship between:
 1.	Resin behavior
 2.	Thermal energy transfer
