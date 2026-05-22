@@ -1,0 +1,363 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2q4rx5idbptl"]
+
+[ext_resource type="Script" uid="uid://df7sxbxrtqu2n" path="res://scenes/modules/resin_flow/resin_flow.gd" id="1_6imuu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dea6w"]
+bg_color = Color(0.23921569, 0.5294118, 0.2627451, 1)
+skew = Vector2(0.5, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 5
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2tsq"]
+bg_color = Color(1, 0.8, 0, 1)
+skew = Vector2(0.5, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 5
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6imuu"]
+bg_color = Color(0.039215688, 0.5803922, 0.6745098, 1)
+skew = Vector2(0.5, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 5
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 5
+
+[node name="ResinFlowDashboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_6imuu")
+
+[node name="MainVBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopToolbar" type="PanelContainer" parent="MainVBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="ToolbarHBox" type="HBoxContainer" parent="MainVBox/TopToolbar"]
+layout_mode = 2
+
+[node name="title_label" type="Label" parent="MainVBox/TopToolbar/ToolbarHBox"]
+layout_mode = 2
+text = " RESIN FLOW INTELLIGENCE"
+
+[node name="Control" type="Control" parent="MainVBox/TopToolbar/ToolbarHBox"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="btn_run" type="Button" parent="MainVBox/TopToolbar/ToolbarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.00069389504, 0.00069389906, 0.00069389655, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_dea6w")
+text = "Run Analysis"
+
+[node name="btn_reset" type="Button" parent="MainVBox/TopToolbar/ToolbarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.8784314, 0.007843138, 0.007843138, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_f2tsq")
+text = "Reset"
+
+[node name="btn_export" type="Button" parent="MainVBox/TopToolbar/ToolbarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_6imuu")
+text = "Export"
+
+[node name="Control2" type="Control" parent="MainVBox/TopToolbar/ToolbarHBox"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="MainSplit" type="HSplitContainer" parent="MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LeftPanel" type="PanelContainer" parent="MainVBox/MainSplit"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="LeftVBox" type="VBoxContainer" parent="MainVBox/MainSplit/LeftPanel"]
+layout_mode = 2
+
+[node name="ResinPanel" type="PanelContainer" parent="MainVBox/MainSplit/LeftPanel/LeftVBox"]
+layout_mode = 2
+
+[node name="ResinVBox" type="VBoxContainer" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel/ResinVBox"]
+layout_mode = 2
+text = "RESIN PROFILE"
+horizontal_alignment = 1
+
+[node name="resin_selector" type="OptionButton" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel/ResinVBox"]
+layout_mode = 2
+item_count = 8
+popup/item_0/text = "Fast Flow Epoxy"
+popup/item_0/id = 0
+popup/item_1/text = "Structural Epoxy"
+popup/item_1/id = 1
+popup/item_2/text = "Filled Phenolic"
+popup/item_2/id = 2
+popup/item_3/text = "Carbon Epoxy"
+popup/item_3/id = 3
+popup/item_4/text = "Silicone Resin"
+popup/item_4/id = 4
+popup/item_5/text = "Vinyl Ester"
+popup/item_5/id = 5
+popup/item_6/text = "High Tg Epoxy"
+popup/item_6/id = 6
+popup/item_7/text = "Low Shrink Polyester"
+popup/item_7/id = 7
+
+[node name="HSeparator" type="HSeparator" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel/ResinVBox"]
+layout_mode = 2
+
+[node name="StrategyPanel" type="PanelContainer" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel/ResinVBox"]
+layout_mode = 2
+
+[node name="StrategyVBox" type="VBoxContainer" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel/ResinVBox/StrategyPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel/ResinVBox/StrategyPanel/StrategyVBox"]
+layout_mode = 2
+text = "PROCESS STRATEGY"
+horizontal_alignment = 1
+
+[node name="strategy_selector" type="OptionButton" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel/ResinVBox/StrategyPanel/StrategyVBox"]
+layout_mode = 2
+item_count = 5
+popup/item_0/text = "Balanced Fill"
+popup/item_0/id = 0
+popup/item_1/text = "Fast Production"
+popup/item_1/id = 1
+popup/item_2/text = "Void Reduction"
+popup/item_2/id = 2
+popup/item_3/text = "Precision Flow"
+popup/item_3/id = 3
+popup/item_4/text = "Low Stress Fill"
+popup/item_4/id = 4
+
+[node name="HSeparator" type="HSeparator" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel/ResinVBox/StrategyPanel/StrategyVBox"]
+layout_mode = 2
+
+[node name="InsightPanel" type="PanelContainer" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel/ResinVBox"]
+layout_mode = 2
+
+[node name="InsightVBox" type="VBoxContainer" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel/ResinVBox/InsightPanel"]
+layout_mode = 2
+
+[node name="insight_text" type="RichTextLabel" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel/ResinVBox/InsightPanel/InsightVBox"]
+layout_mode = 2
+bbcode_enabled = true
+text = " Select resin profile and run analysis."
+fit_content = true
+
+[node name="HSeparator" type="HSeparator" parent="MainVBox/MainSplit/LeftPanel/LeftVBox/ResinPanel/ResinVBox/InsightPanel/InsightVBox"]
+layout_mode = 2
+
+[node name="CenterPanel" type="PanelContainer" parent="MainVBox/MainSplit"]
+custom_minimum_size = Vector2(500, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="CenterVBox" type="VBoxContainer" parent="MainVBox/MainSplit/CenterPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainVBox/MainSplit/CenterPanel/CenterVBox"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "COMPRESSION FLOW "
+
+[node name="FlowViewport" type="ColorRect" parent="MainVBox/MainSplit/CenterPanel/CenterVBox"]
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.12591085, 0.12591085, 0.12591082, 1)
+
+[node name="ResultsPanel" type="PanelContainer" parent="MainVBox/MainSplit"]
+custom_minimum_size = Vector2(500, 0)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="ResultsVBox" type="VBoxContainer" parent="MainVBox/MainSplit/ResultsPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox"]
+layout_mode = 2
+size_flags_vertical = 10
+text = " PROCESS INTELLIGENCE"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox"]
+layout_direction = 2
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2
+
+[node name="Label" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+text = " Resin State"
+
+[node name="label_resin_state" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "--"
+
+[node name="HSeparator3" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator4" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+text = " Viscosity Trend"
+
+[node name="label_viscosity" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "--"
+
+[node name="HSeparator5" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator6" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label3" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+text = " Gelation Status"
+
+[node name="label_gelation" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "--"
+
+[node name="HSeparator7" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator8" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+text = " Flow Stability"
+
+[node name="label_stability" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "--"
+
+[node name="HSeparator15" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator16" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label5" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+text = " Void Risk"
+
+[node name="label_voids" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "--"
+
+[node name="HSeparator9" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator10" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label6" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+text = " Cure Advancement"
+
+[node name="label_cure" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "--"
+
+[node name="HSeparator13" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator14" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label7" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+text = " Flow Lock Risk"
+
+[node name="label_lock" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "--"
+
+[node name="HSeparator11" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator12" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label8" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+text = " Compression Response"
+
+[node name="label_compression" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "--"
+
+[node name="HSeparator" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator2" type="HSeparator" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BottomStatusBar" type="PanelContainer" parent="MainVBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainVBox/BottomStatusBar"]
+layout_mode = 2
+
+[node name="status_label" type="Label" parent="MainVBox/BottomStatusBar/HBoxContainer"]
+layout_mode = 2
+text = "System Ready"

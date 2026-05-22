@@ -1,0 +1,438 @@
+[gd_scene load_steps=9 format=3 uid="uid://du26bnk7nvckq"]
+
+[ext_resource type="Script" uid="uid://bvjoellkiu3fx" path="res://scenes/modules/cure_cycle/cure_material_database.gd" id="1_a4m1b"]
+[ext_resource type="Script" uid="uid://6aljhm8pj58p" path="res://scenes/modules/cure_cycle/cure_cycle.gd" id="1_t0nj0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0nj0"]
+bg_color = Color(0.29803923, 0.38039216, 0.1882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aei7c"]
+bg_color = Color(0.23921569, 0.5294118, 0.2627451, 1)
+skew = Vector2(0.5, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 5
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t53ef"]
+bg_color = Color(0.039215688, 0.5803922, 0.6745098, 1)
+skew = Vector2(0.5, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 5
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olukp"]
+bg_color = Color(1, 0.8, 0, 1)
+skew = Vector2(0.5, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 5
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73036"]
+bg_color = Color(0.039215688, 0.5803922, 0.6745098, 1)
+skew = Vector2(0.5, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 5
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ew2im"]
+bg_color = Color(0.09, 0, 0, 1)
+
+[node name="CureCycle" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t0nj0")
+
+[node name="MainVBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="MainVBox"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainVBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_t0nj0")
+text = "Cure Cycle"
+horizontal_alignment = 1
+
+[node name="HSeparator6" type="HSeparator" parent="MainVBox"]
+layout_mode = 2
+
+[node name="TopToolbar" type="PanelContainer" parent="MainVBox"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+
+[node name="ToolbarHBox" type="HBoxContainer" parent="MainVBox/TopToolbar"]
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="MainVBox/TopToolbar/ToolbarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="btn_run_cycle" type="Button" parent="MainVBox/TopToolbar/ToolbarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_aei7c")
+text = "Run Cycle"
+
+[node name="btn_stop" type="Button" parent="MainVBox/TopToolbar/ToolbarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_t53ef")
+text = "Stop"
+
+[node name="btn_reset" type="Button" parent="MainVBox/TopToolbar/ToolbarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.88, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_olukp")
+text = "Reset"
+
+[node name="btn_export" type="Button" parent="MainVBox/TopToolbar/ToolbarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_73036")
+text = "Export"
+
+[node name="Control3" type="Control" parent="MainVBox/TopToolbar/ToolbarHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MainSplit" type="HSplitContainer" parent="MainVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+split_offset = 9
+
+[node name="LeftPanel" type="PanelContainer" parent="MainVBox/MainSplit"]
+custom_minimum_size = Vector2(221.42, 0)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MainVBox/MainSplit/LeftPanel"]
+layout_mode = 2
+
+[node name="LeftVBox" type="VBoxContainer" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45882353, 1, 0.5411765, 1)
+text = " Cure Cycle Parameters"
+horizontal_alignment = 1
+
+[node name="MaterialPanel" type="PanelContainer" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox"]
+layout_mode = 2
+
+[node name="MaterialVBox" type="VBoxContainer" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/MaterialPanel"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="HSeparator" type="HSeparator" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/MaterialPanel/MaterialVBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/MaterialPanel/MaterialVBox"]
+layout_mode = 2
+text = "  Material Selection"
+
+[node name="material_selector" type="OptionButton" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/MaterialPanel/MaterialVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55148333, 0.35569245, 0.7031311, 1)
+item_count = 6
+popup/item_0/text = "Epoxy Resin"
+popup/item_0/id = 0
+popup/item_1/text = "Phenolic Resin"
+popup/item_1/id = 1
+popup/item_2/text = "Polyester Resin"
+popup/item_2/id = 2
+popup/item_3/text = "Carbon Epoxy"
+popup/item_3/id = 3
+popup/item_4/text = "Glass Fiber Epoxy"
+popup/item_4/id = 4
+popup/item_5/text = "Rubber Compound"
+popup/item_5/id = 5
+
+[node name="Label2" type="Label" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/MaterialPanel/MaterialVBox"]
+layout_mode = 2
+text = "  Part Thickness (mm)"
+
+[node name="input_thickness" type="SpinBox" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/MaterialPanel/MaterialVBox"]
+layout_mode = 2
+min_value = 1.0
+page = 2.0
+value = 5.0
+alignment = 1
+update_on_text_changed = true
+
+[node name="Label3" type="Label" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/MaterialPanel/MaterialVBox"]
+layout_mode = 2
+text = " Initial Temperature (°C)"
+
+[node name="input_initial_temp" type="SpinBox" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/MaterialPanel/MaterialVBox"]
+layout_mode = 2
+min_value = 20.0
+max_value = 200.0
+page = 2.0
+value = 25.0
+alignment = 1
+
+[node name="ProcessPanel" type="PanelContainer" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox"]
+layout_mode = 2
+
+[node name="ProcessVBox" type="VBoxContainer" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/ProcessPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/ProcessPanel/ProcessVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.45999998, 1, 0.5409999, 1)
+text = "Process Setup"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/ProcessPanel/ProcessVBox"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/ProcessPanel/ProcessVBox"]
+layout_mode = 2
+text = " Target Temperature (°C)"
+
+[node name="target_temp" type="SpinBox" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/ProcessPanel/ProcessVBox"]
+layout_mode = 2
+min_value = 50.0
+max_value = 300.0
+page = 2.0
+value = 140.0
+alignment = 1
+
+[node name="Label3" type="Label" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/ProcessPanel/ProcessVBox"]
+layout_mode = 2
+text = " Heating Mode"
+
+[node name="heating_mode" type="OptionButton" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/ProcessPanel/ProcessVBox"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Standard"
+popup/item_0/id = 0
+popup/item_1/text = "Fast Ramp"
+popup/item_1/id = 1
+popup/item_2/text = "Slow Precision"
+popup/item_2/id = 2
+
+[node name="Label4" type="Label" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/ProcessPanel/ProcessVBox"]
+layout_mode = 2
+text = " Cooling Mode"
+
+[node name="cooling_mode" type="OptionButton" parent="MainVBox/MainSplit/LeftPanel/ScrollContainer/LeftVBox/ProcessPanel/ProcessVBox"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Natural Cooling"
+popup/item_0/id = 0
+popup/item_1/text = "Forced Air"
+popup/item_1/id = 1
+popup/item_2/text = "Water Cooling"
+popup/item_2/id = 2
+
+[node name="CenterPanel" type="PanelContainer" parent="MainVBox/MainSplit"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="CenterVBox" type="VBoxContainer" parent="MainVBox/MainSplit/CenterPanel"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ViewportHeader" type="PanelContainer" parent="MainVBox/MainSplit/CenterPanel/CenterVBox"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="ViewportHeaderHBox" type="HBoxContainer" parent="MainVBox/MainSplit/CenterPanel/CenterVBox/ViewportHeader"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="MainVBox/MainSplit/CenterPanel/CenterVBox/ViewportHeader/ViewportHeaderHBox"]
+visible = false
+layout_mode = 2
+text = "Cure Cycle "
+
+[node name="btn_thermal_view" type="Button" parent="MainVBox/MainSplit/CenterPanel/CenterVBox/ViewportHeader/ViewportHeaderHBox"]
+visible = false
+layout_mode = 2
+text = "Thermal"
+
+[node name="btn_cure_view" type="Button" parent="MainVBox/MainSplit/CenterPanel/CenterVBox/ViewportHeader/ViewportHeaderHBox"]
+visible = false
+layout_mode = 2
+text = "Cure"
+
+[node name="btn_cycle_view" type="Button" parent="MainVBox/MainSplit/CenterPanel/CenterVBox/ViewportHeader/ViewportHeaderHBox"]
+visible = false
+layout_mode = 2
+text = "Cycle	"
+
+[node name="SimulationViewport" type="PanelContainer" parent="MainVBox/MainSplit/CenterPanel/CenterVBox"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="ViewportContent" type="Control" parent="MainVBox/MainSplit/CenterPanel/CenterVBox/SimulationViewport"]
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="CureChamber" type="Panel" parent="MainVBox/MainSplit/CenterPanel/CenterVBox/SimulationViewport/ViewportContent"]
+layout_mode = 0
+offset_left = 20.000004
+offset_top = 62.0
+offset_right = 537.0
+offset_bottom = 433.0
+
+[node name="MaterialBlock" type="ColorRect" parent="MainVBox/MainSplit/CenterPanel/CenterVBox/SimulationViewport/ViewportContent/CureChamber"]
+layout_mode = 0
+offset_left = 23.914993
+offset_top = 32.0
+offset_right = 492.0
+offset_bottom = 330.0
+color = Color(0.1026, 0.117179975, 0.54, 1)
+
+[node name="cycle_status_label" type="Label" parent="MainVBox/MainSplit/CenterPanel/CenterVBox/SimulationViewport/ViewportContent"]
+layout_mode = 0
+offset_left = 39.84
+offset_right = 174.84
+offset_bottom = 23.0
+text = "Cycle Status : Idle"
+
+[node name="ResultsPanel" type="PanelContainer" parent="MainVBox/MainSplit"]
+custom_minimum_size = Vector2(600, 359.505)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ResultsVBox" type="VBoxContainer" parent="MainVBox/MainSplit/ResultsPanel"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox"]
+layout_direction = 2
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/VBoxContainer"]
+layout_mode = 2
+text = "Cure Cycle Results"
+horizontal_alignment = 1
+
+[node name="ResultsGridPanel" type="PanelContainer" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox"]
+layout_mode = 2
+
+[node name="ResultsGrid" type="GridContainer" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel"]
+layout_direction = 2
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel/ResultsGrid"]
+layout_mode = 2
+text = "Cure Stage"
+
+[node name="label_cure_stage" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel/ResultsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-"
+
+[node name="Label2" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel/ResultsGrid"]
+layout_mode = 2
+text = "Degree of Cure"
+
+[node name="label_degree_cure" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel/ResultsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-"
+
+[node name="Label3" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel/ResultsGrid"]
+layout_mode = 2
+text = "Resin State"
+
+[node name="label_resin_state" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel/ResultsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-"
+
+[node name="Label4" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel/ResultsGrid"]
+layout_mode = 2
+text = "Cycle Status"
+
+[node name="label_cycle_status" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel/ResultsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Idle"
+
+[node name="Label5" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel/ResultsGrid"]
+layout_mode = 2
+text = "Est. Cure Time"
+
+[node name="label_cure_time" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel/ResultsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-"
+
+[node name="Label6" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel/ResultsGrid"]
+layout_mode = 2
+text = "Peak Temperature"
+
+[node name="label_peak_temp" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/ResultsGridPanel/ResultsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "-"
+
+[node name="WarningsPanel" type="PanelContainer" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox"]
+layout_mode = 2
+
+[node name="WarningsVBox" type="VBoxContainer" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/WarningsPanel"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/WarningsPanel/WarningsVBox"]
+layout_mode = 2
+text = "Process Information"
+horizontal_alignment = 1
+
+[node name="warnings_text" type="RichTextLabel" parent="MainVBox/MainSplit/ResultsPanel/ResultsVBox/WarningsPanel/WarningsVBox"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_ew2im")
+bbcode_enabled = true
+fit_content = true
+
+[node name="BottomStatusBar" type="PanelContainer" parent="MainVBox"]
+layout_mode = 2
+
+[node name="StatusHBox" type="HBoxContainer" parent="MainVBox/BottomStatusBar"]
+layout_mode = 2
+
+[node name="status_label" type="Label" parent="MainVBox/BottomStatusBar/StatusHBox"]
+layout_mode = 2
+text = "System Ready"
+
+[node name="MaterialDatabase" type="Node" parent="."]
+script = ExtResource("1_a4m1b")
+
+[connection signal="pressed" from="MainVBox/TopToolbar/ToolbarHBox/btn_run_cycle" to="." method="_on_btn_run_cycle_pressed"]
+[connection signal="pressed" from="MainVBox/TopToolbar/ToolbarHBox/btn_reset" to="." method="_on_btn_reset_pressed"]

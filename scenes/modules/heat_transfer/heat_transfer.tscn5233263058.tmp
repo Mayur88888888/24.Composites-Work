@@ -1,0 +1,320 @@
+[gd_scene load_steps=5 format=3 uid="uid://doqnfkis6bjcg"]
+
+[ext_resource type="Script" uid="uid://bsxjsxw665ryr" path="res://scenes/modules/heat_transfer/heat_transfer.gd" id="1_x11kp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x11kp"]
+bg_color = Color(0.24086887, 0.5283578, 0.26294035, 1)
+skew = Vector2(0.6, 0)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27eel"]
+bg_color = Color(0.6, 0.27, 0.27, 1)
+skew = Vector2(0.6, 0)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wquj"]
+bg_color = Color(1, 0.8000001, 0, 1)
+skew = Vector2(0.6, 0)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+anti_aliasing_size = 0.01
+
+[node name="HeatTransferModule" type="Control"]
+layout_mode = 3
+anchor_right = 0.77300006
+anchor_bottom = 0.91
+offset_right = -0.49609375
+offset_bottom = 18.320007
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x11kp")
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 891.0
+offset_bottom = 602.0
+
+[node name="MainSplit" type="HSplitContainer" parent="MainContainer"]
+layout_mode = 2
+split_offset = 320
+
+[node name="ParameterPanel" type="PanelContainer" parent="MainContainer/MainSplit"]
+custom_minimum_size = Vector2(460, 600)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/MainSplit/ParameterPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ParameterScroll" type="ScrollContainer" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="ParameterContent" type="VBoxContainer" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ModuleTitle" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Heat Transfer Simulator"
+
+[node name="HSeparator" type="HSeparator" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Geometry Settings"
+horizontal_alignment = 1
+
+[node name="LengthRow" type="HBoxContainer" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/LengthRow"]
+layout_mode = 2
+text = "Length (mm)"
+
+[node name="Spacer" type="Control" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/LengthRow"]
+custom_minimum_size = Vector2(227.895, 0.65)
+layout_mode = 2
+
+[node name="LengthInput" type="SpinBox" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/LengthRow"]
+layout_mode = 2
+min_value = 10.0
+max_value = 1000.0
+value = 1000.0
+alignment = 2
+
+[node name="WidthRow" type="HBoxContainer" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/WidthRow"]
+layout_mode = 2
+text = "Width (mm)"
+
+[node name="Spacer" type="Control" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/WidthRow"]
+custom_minimum_size = Vector2(235, 0.65)
+layout_mode = 2
+
+[node name="WidthInput" type="SpinBox" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/WidthRow"]
+layout_mode = 2
+min_value = 10.0
+max_value = 1000.0
+value = 500.0
+alignment = 2
+
+[node name="HeightRow" type="HBoxContainer" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/HeightRow"]
+layout_mode = 2
+text = "Height (mm)"
+
+[node name="Spacer" type="Control" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/HeightRow"]
+custom_minimum_size = Vector2(230, 0.65)
+layout_mode = 2
+
+[node name="HeightInput" type="SpinBox" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/HeightRow"]
+layout_mode = 2
+min_value = 10.0
+max_value = 1000.0
+value = 100.0
+alignment = 2
+
+[node name="HSeparator2" type="HSeparator" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Material Properties"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/HBoxContainer"]
+layout_mode = 2
+text = "Material"
+
+[node name="Spacer" type="Control" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/HBoxContainer"]
+custom_minimum_size = Vector2(232.235, 0.65)
+layout_mode = 2
+
+[node name="MaterialSelector" type="OptionButton" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/HBoxContainer"]
+layout_mode = 2
+selected = 2
+item_count = 4
+popup/item_0/text = "Steel"
+popup/item_0/id = 0
+popup/item_1/text = "Aluminum"
+popup/item_1/id = 1
+popup/item_2/text = "Copper"
+popup/item_2/id = 2
+popup/item_3/text = "Titanium"
+popup/item_3/id = 3
+
+[node name="HSeparator3" type="HSeparator" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Heater Temperature"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/HBoxContainer2"]
+layout_mode = 2
+text = "T°C"
+
+[node name="InitialTempInput" type="SpinBox" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/HBoxContainer2"]
+layout_mode = 2
+max_value = 1000.0
+value = 25.0
+alignment = 2
+
+[node name="Label2" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/HBoxContainer2"]
+layout_mode = 2
+text = "H T°C"
+
+[node name="HeaterTempInput" type="SpinBox" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/HBoxContainer2"]
+layout_mode = 2
+max_value = 1000.0
+value = 200.0
+alignment = 2
+
+[node name="Label3" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/HBoxContainer2"]
+layout_mode = 2
+text = "Wattage"
+
+[node name="Wattage" type="SpinBox" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/HBoxContainer2"]
+layout_mode = 2
+max_value = 1000.0
+value = 200.0
+alignment = 2
+
+[node name="HSeparator4" type="HSeparator" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Simulation Controls"
+horizontal_alignment = 1
+
+[node name="HSeparator6" type="HSeparator" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+
+[node name="SimulationTimeRow" type="HBoxContainer" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/SimulationTimeRow"]
+layout_mode = 2
+text = "Simulation Time (s)"
+
+[node name="SimulationTimeInput" type="SpinBox" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/SimulationTimeRow"]
+layout_mode = 2
+min_value = 60.0
+max_value = 10000.0
+step = 10.0
+value = 100.0
+alignment = 2
+
+[node name="ControlButtons" type="HBoxContainer" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+alignment = 1
+
+[node name="RunButton" type="Button" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/ControlButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.14249997, 0.92308336, 0.95, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.26840898, 0.00012745023, 0.89938146, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_x11kp")
+text = "          Run          "
+
+[node name="StopButton" type="Button" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/ControlButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.14117648, 0.92156863, 0.9490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.26666668, 0, 0.8980392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_27eel")
+text = "          Stop          "
+
+[node name="CancelButton" type="Button" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent/ControlButtons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.008799992, 0.008799992, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_4wquj")
+text = "          Reset          "
+
+[node name="HSeparator5" type="HSeparator" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+
+[node name="ResultLabel" type="Label" parent="MainContainer/MainSplit/ParameterPanel/MarginContainer/ParameterScroll/ParameterContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="ViewportPanel" type="PanelContainer" parent="MainContainer/MainSplit"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/MainSplit/ViewportPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="ViewportContent" type="VBoxContainer" parent="MainContainer/MainSplit/ViewportPanel/MarginContainer"]
+layout_direction = 1
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/MainSplit/ViewportPanel/MarginContainer/ViewportContent"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Simulation Viewport"
+
+[node name="SimulationDisplay" type="PanelContainer" parent="MainContainer/MainSplit/ViewportPanel/MarginContainer/ViewportContent"]
+layout_direction = 1
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MainContainer/MainSplit/ViewportPanel/MarginContainer/ViewportContent/SimulationDisplay"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainContainer/MainSplit/ViewportPanel/MarginContainer/ViewportContent/SimulationDisplay/CenterContainer"]
+layout_mode = 2
+text = "Thermal Simulation Visualization Area"
+
+[node name="SimulationView" type="Control" parent="MainContainer/MainSplit/ViewportPanel/MarginContainer/ViewportContent"]
+custom_minimum_size = Vector2(0, 460)
+layout_mode = 2
+
+[node name="HeatBarContainer" type="HBoxContainer" parent="MainContainer/MainSplit/ViewportPanel/MarginContainer/ViewportContent/SimulationView"]
+custom_minimum_size = Vector2(9.475, 8.075)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="SimulationTimer" type="Timer" parent="."]
+wait_time = 0.1

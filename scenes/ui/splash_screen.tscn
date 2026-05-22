@@ -1,0 +1,85 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7lpwft1bxm2a"]
+
+[ext_resource type="Script" uid="uid://cu1x2fhp8s8x5" path="res://scenes/ui/splash_screen.gd" id="1_m0ilf"]
+[ext_resource type="Texture2D" uid="uid://c70j7775s7lbk" path="res://scenes/ui/Splash.png" id="1_yei5s"]
+[ext_resource type="Shader" uid="uid://c1u0hrdwb3uig" path="res://scenes/ui/splash_screen.gdshader" id="3_eina6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0ilf"]
+bg_color = Color(0.84, 0.74424, 0.3612, 0.62352943)
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.09, 0.09, 0.09, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 30
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 30
+shadow_color = Color(0.8727314, 0.66316897, 0.2664402, 0.6)
+shadow_size = 143
+anti_aliasing_size = 8.553
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wh6tg"]
+shader = ExtResource("3_eina6")
+shader_parameter/speed = 0.25
+shader_parameter/glow_color = Color(0.2, 0.7, 1, 0.18)
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m0ilf")
+
+[node name="SplashImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yei5s")
+stretch_mode = 6
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.293
+anchor_top = 0.5
+anchor_right = 0.62600005
+anchor_bottom = 0.77900004
+offset_left = -229.53601
+offset_top = -32.0
+offset_right = 221.84796
+offset_bottom = -52.792023
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1.3167266, 1.3167266, 1.3167266, 1)
+theme_override_colors/font_shadow_color = Color(0.24764132, 0.34684607, 0.13836703, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 18
+theme_override_constants/shadow_outline_size = 13
+theme_override_font_sizes/font_size = 46
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0ilf")
+text = "Composite Engineering Suite
+By - Mayur S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FXOverlay" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_wh6tg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -187.0
+offset_right = 195.0
+offset_bottom = 184.0
+grow_horizontal = 2
+grow_vertical = 2

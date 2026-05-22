@@ -1,0 +1,351 @@
+[gd_scene load_steps=20 format=3 uid="uid://vokjw6q0piv3"]
+
+[ext_resource type="Script" uid="uid://dy6yiue36uv7p" path="res://scenes/dashboard/main_dashboard.gd" id="1_u8gvu"]
+[ext_resource type="PackedScene" uid="uid://1q1pdhrexsyy" path="res://scenes/modules/about/about.tscn" id="2_aeimu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nudyc"]
+bg_color = Color(0.14509805, 0.14509805, 0.14901961, 1)
+border_width_bottom = 1
+border_color = Color(0.22745098, 0.23921569, 0.25490198, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3v6cq"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25bma"]
+bg_color = Color(0.14509805, 0.14509805, 0.14901961, 1)
+
+[sub_resource type="Theme" id="Theme_25bma"]
+default_font_size = 24
+
+[sub_resource type="Theme" id="Theme_u8gvu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8gvu"]
+content_margin_left = 20.0
+bg_color = Color(0.29803923, 0.38039216, 0.1882353, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mwdq"]
+content_margin_left = 20.0
+bg_color = Color(0, 0.47843137, 0.8, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5mkm"]
+content_margin_left = 40.0
+bg_color = Color(0, 0.47843137, 0.8, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4oftq"]
+bg_color = Color(0, 0.47843137, 0.8, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aeimu"]
+content_margin_left = 20.0
+bg_color = Color(0.29803923, 0.38039216, 0.1882353, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8cki"]
+content_margin_left = 20.0
+bg_color = Color(0.29803923, 0.38039216, 0.1882353, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kurm6"]
+content_margin_left = 20.0
+bg_color = Color(0.5955254, 0.31286517, 0.18114269, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_niblq"]
+content_margin_left = 20.0
+bg_color = Color(0, 0.47843137, 0.8, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj5b5"]
+content_margin_left = 40.0
+bg_color = Color(0, 0.47843137, 0.8, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmrgh"]
+bg_color = Color(0.1896, 0.24, 0.19044, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3mw4"]
+bg_color = Color(0.14509805, 0.14509805, 0.14901961, 1)
+border_width_top = 1
+border_color = Color(0.22745098, 0.23921569, 0.25490198, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqib4"]
+draw_center = false
+
+[node name="MainDashboard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u8gvu")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.11764706, 0.11764706, 0.11764706, 1)
+metadata/_edit_lock_ = true
+
+[node name="TopBar" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nudyc")
+
+[node name="TopBarContainer" type="HBoxContainer" parent="TopBar"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="AppTitle" type="Label" parent="TopBar/TopBarContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_3v6cq")
+text = "     Composite Engineering Suite"
+
+[node name="Spacer" type="Control" parent="TopBar/TopBarContainer"]
+custom_minimum_size = Vector2(200, 0.65)
+layout_mode = 2
+
+[node name="CurrentProjectLabel" type="Label" parent="TopBar/TopBarContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.73333335, 0.73333335, 0.73333335, 1)
+text = "No Project Loaded"
+
+[node name="btn_new_project" type="Button" parent="TopBar/TopBarContainer"]
+custom_minimum_size = Vector2(70, 32)
+layout_mode = 2
+text = "New"
+
+[node name="btn_open_project" type="Button" parent="TopBar/TopBarContainer"]
+layout_mode = 2
+text = "Open"
+
+[node name="btn_save_project" type="Button" parent="TopBar/TopBarContainer"]
+layout_mode = 2
+text = "Save"
+
+[node name="btn_settings" type="Button" parent="TopBar/TopBarContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Spacer2" type="Control" parent="TopBar/TopBarContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AppTitle2" type="Label" parent="TopBar/TopBarContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_3v6cq")
+text = "
+V1.1.1"
+horizontal_alignment = 3
+vertical_alignment = 2
+
+[node name="Sidebar" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.132
+anchor_right = 0.201
+anchor_bottom = 0.901
+offset_top = -31.536003
+offset_right = -11.552002
+offset_bottom = 25.151978
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_25bma")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Sidebar"]
+layout_mode = 2
+theme = SubResource("Theme_25bma")
+theme_override_constants/separation = 11
+
+[node name="btn_dashboard" type="Button" parent="Sidebar/VBoxContainer"]
+custom_minimum_size = Vector2(220, 45)
+layout_direction = 1
+layout_mode = 2
+theme = SubResource("Theme_u8gvu")
+theme_override_constants/h_separation = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_u8gvu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8mwdq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f5mkm")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4oftq")
+text = "Dashboard"
+alignment = 0
+
+[node name="btn_heat_transfer" type="Button" parent="Sidebar/VBoxContainer"]
+custom_minimum_size = Vector2(220, 45)
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_aeimu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8mwdq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f5mkm")
+text = "Heat Transfer"
+alignment = 0
+
+[node name="btn_mold_process" type="Button" parent="Sidebar/VBoxContainer"]
+custom_minimum_size = Vector2(220, 45)
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_a8cki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8mwdq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f5mkm")
+text = "Mold Process"
+alignment = 0
+
+[node name="btn_cure_cycle" type="Button" parent="Sidebar/VBoxContainer"]
+custom_minimum_size = Vector2(220, 45)
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_a8cki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8mwdq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f5mkm")
+text = "Cure Cycle"
+alignment = 0
+
+[node name="btn_resin_flow" type="Button" parent="Sidebar/VBoxContainer"]
+custom_minimum_size = Vector2(220, 45)
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_a8cki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8mwdq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f5mkm")
+text = "Resin Flow"
+alignment = 0
+
+[node name="btn_materials" type="Button" parent="Sidebar/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(220, 45)
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_a8cki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8mwdq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f5mkm")
+text = "Materials"
+alignment = 0
+
+[node name="btn_reports" type="Button" parent="Sidebar/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(220, 45)
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_a8cki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8mwdq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f5mkm")
+text = "Reports"
+alignment = 0
+
+[node name="btn_about" type="Button" parent="Sidebar/VBoxContainer"]
+custom_minimum_size = Vector2(220, 45)
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_a8cki")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8mwdq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f5mkm")
+text = "About"
+alignment = 0
+
+[node name="HSeparator" type="HSeparator" parent="Sidebar/VBoxContainer"]
+layout_mode = 2
+
+[node name="btn_exit" type="Button" parent="Sidebar/VBoxContainer"]
+custom_minimum_size = Vector2(220, 45)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/h_separation = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_kurm6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_niblq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fj5b5")
+text = "Exit"
+alignment = 0
+
+[node name="Workspace" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21700001
+anchor_top = 0.120000005
+anchor_right = 0.93200004
+anchor_bottom = 0.89000005
+offset_left = -24.984009
+offset_top = -24.520004
+offset_right = 69.33594
+offset_bottom = 32.27997
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Workspace"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nmrgh")
+
+[node name="StatusBar" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d3mw4")
+
+[node name="StatusContainer" type="HBoxContainer" parent="StatusBar"]
+layout_mode = 2
+
+[node name="Ready" type="Label" parent="StatusBar/StatusContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.49833333, 1, 0.3, 1)
+theme_override_font_sizes/font_size = 14
+text = "Ready...."
+
+[node name="Spacer" type="Control" parent="StatusBar/StatusContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ModuleLabel" type="Label" parent="StatusBar/StatusContainer"]
+layout_mode = 2
+text = "Dashboard   "
+
+[node name="FPSLabel" type="Label" parent="StatusBar/StatusContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_oqib4")
+text = "FPS: 0"
+
+[node name="PopupLayer" type="CanvasLayer" parent="."]
+
+[node name="AboutDialog" parent="." instance=ExtResource("2_aeimu")]
+visible = false

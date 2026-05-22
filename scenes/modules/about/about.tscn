@@ -1,0 +1,184 @@
+[gd_scene load_steps=2 format=3 uid="uid://1q1pdhrexsyy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8pafl"]
+bg_color = Color(0.14509805, 0.14509805, 0.14901961, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[node name="AboutDialog" type="AcceptDialog"]
+oversampling_override = 1.0
+mode = 4
+title = "Composite Engineering Suite"
+initial_position = 2
+size = Vector2i(1300, 550)
+visible = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_8pafl")
+ok_button_text = "        GOT IT        "
+dialog_autowrap = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.009000001
+anchor_top = 0.121
+anchor_right = 0.95500004
+anchor_bottom = 0.882
+offset_left = -11.700001
+offset_top = -66.55
+offset_right = 58.5
+offset_bottom = 23.899994
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Version 1.1.1
+Developer : Solo Developer - Mayur S."
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 0.05)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="about_text" type="RichTextLabel" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "
+[color=orange][b]SOFTWARE PURPOSE[/b][/color]
+
+Composite Engineering Suite is designed to provide a simplified but industrially relevant visualization and analysis platform for compression molding processes.
+
+The software focuses on:
+
+• Compression molding process understanding
+• Resin behavior intelligence
+• Cure cycle visualization
+• Thermal response simulation
+• Rheological resin insights
+• Manufacturing-oriented process interpretation
+• Educational and industrial process visualization
+
+Instead of relying on complex academic finite element systems, this platform emphasizes practical industrial behavior and intuitive engineering understanding.
+*****************************************************************************
+
+[color=orange][b]WHY THIS SOFTWARE EXISTS[/b][/color]
+
+Most traditional simulation platforms are:
+
+• Extremely expensive
+• Difficult to learn
+• Focused heavily on research workflows
+• Not visually intuitive
+• Overloaded with unnecessary parameters
+
+This software was created to provide:
+
+• Simpler engineering workflows
+• Faster process understanding
+• Interactive industrial visualization
+• Resin intelligence interpretation
+• Practical compression molding analysis
+• Lightweight simulation architecture
+
+The platform is intended for:
+
+• Manufacturing engineers
+• Process engineers
+• Composite engineers
+• Students and researchers
+• Industrial training environments
+• Resin behavior visualization
+• Compression molding education
+*****************************************************************************
+
+[color=orange][b]SOFTWARE ARCHITECTURE[/b][/color]
+
+This platform is developed using:
+
+• GDScript
+• Real-time UI-driven simulation workflows
+• Process intelligence logic systems
+• Resin behavior databases
+• Industrial visualization architecture
+
+The software intentionally prioritizes:
+
+• Fast execution
+• Visual clarity
+• Modular expansion
+• Industrial simplicity
+• Real-time interaction
+*****************************************************************************
+
+[color=orange][b]CURRENT MODULES[/b][/color]
+
+• Heat Transfer
+• Compression Molding
+• Cure Cycle Intelligence
+• Resin Flow Intelligence
+• Resin Rheology Interpretation
+• Process Stability Visualization
+
+Future modules may include:
+
+• Defect prediction
+• Void analysis
+• Composite layup intelligence
+• Compression pressure mapping
+• Smart manufacturing recommendations
+*****************************************************************************
+
+[color=orange][b]LICENSE INFORMATION[/b][/color]
+
+This software and associated educational simulation content are released under the Creative Commons CC0 1.0 Universal License.
+
+CC0 Summary:
+
+• Free to use
+• Free to modify
+• Free for commercial usage
+• No attribution required
+• No copyright restrictions intended
+
+The intention of this project is to encourage open engineering education, industrial accessibility, and simulation learning.
+
+Full license details:
+https://creativecommons.org/publicdomain/zero/1.0/
+*****************************************************************************
+
+[color=orange][b]DISCLAIMER[/b][/color]
+
+This software is intended for:
+
+• Educational usage
+• Process understanding
+• Industrial visualization
+• Engineering interpretation
+
+The outputs are not intended to replace certified industrial validation, production qualification procedures, or safety-critical engineering approval workflows.
+
+Users are responsible for validating manufacturing parameters in real-world industrial environments.
+****************************************************************************
+
+[color=orange][b]DEVELOPMENT PHILOSOPHY[/b][/color]
+[color=orange][b]ACKNOWLEDGEMENTS[/b][/color]
+
+Built using the open-source Godot Engine.
+
+Inspired by industrial compression molding workflows, thermoset processing behavior, and practical manufacturing process intelligence.
+*****************************************************************************
+
+© Composite Engineering Suite
+Open Engineering Simulation Initiative
+
+
+"
+fit_content = true
